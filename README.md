@@ -90,5 +90,33 @@ Tests follow the AAA pattern for clarity:
 - **Act**: Perform the HTTP request.
 - **Assert**: Verify the response status and data.
 
-### Phone Combinations
+## Phone Combinations
 Using backtracking, the function explores all possible combinations by iterating through each digit's letters recursively. This approach is efficient for the small input constraints (digits 2-9, up to 4 digits typically).
+
+### Phone Combinations
+
+The `phone.ts` file contains the `letterCombinations` function.
+
+### Phone Number Letter Combinations
+The function `letterCombinations` in `phone.ts` uses a backtracking approach to generate all possible letter combinations for a given phone number digits (2-9). It maps each digit to its letters and recursively builds combinations.
+
+### Logic:
+- Use a map for digit-to-letters.
+- Backtrack through each digit, appending each possible letter to the current combination.
+- When all digits are processed, add the combination to the result.
+
+This approach efficiently handles the combinatorial explosion by exploring all paths in the decision tree.
+
+### Examples
+
+```typescript
+letterCombinations("23"); // ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+letterCombinations("");   // []
+letterCombinations("2");  // ["a","b","c"]
+```
+
+To run the phone combinations (requires Node.js and TypeScript):
+```bash
+npx ts-node phone.ts
+```
+
